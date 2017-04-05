@@ -61,13 +61,14 @@
                 <section class="special box">
                     <button class="icon fa-area-chart major"></button>
                     <h3>Những bài hát được yêu thích nhất</h3>
-                    <p class="twoleft">1.</p>
-                    <!--<p>1.</p>-->
-                    <!--<p>1.</p>-->
-                    <!--<p>1.</p>-->
-                    <!--<p>1.</p>-->
-                    <!--<p>1.</p>-->
-                    <!--<p>1.</p>-->
+                    <?php foreach($songs_view as $key=>$value): ?>
+                        <p class="twoleft"> 
+                        <?php 
+                            $j = $key+1;
+                            echo $j.'. '.ucwords(strtolower($value['Song']['name'])); ?>
+                                
+                        </p>
+                    <?php endforeach; ?>
                 </section>
             </div>
             <div class="4u">
@@ -81,7 +82,15 @@
                 <section class="special box">
                     <button class="icon fa-cog major"></button>
                     <h3>Những bài hát mới cập nhật</h3>
-                    <!--<p>Eu non col commodo accumsan ante mi. Commodo consectetur sed mi adipiscing accumsan ac nunc tincidunt lobortis.</p>-->
+                    <?php foreach($songs_new as $key=>$value): ?>
+                        <p class="twoleft"> 
+                        <?php 
+                            $j = $key+1;
+                            echo $j.'. '.ucwords(strtolower($value['Song']['name'])); ?>
+                                
+                        </p>
+                    <?php endforeach; ?>
+                    
                 </section>
             </div>
         </div>

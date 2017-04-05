@@ -1090,4 +1090,5 @@
 	}
 	.twoleft {
 		text-align: left;
+		margin: 0px !important;
 	}

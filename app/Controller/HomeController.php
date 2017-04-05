@@ -30,7 +30,15 @@ App::uses('Controller', 'Controller');
  * @package		app.Controller
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
-class HomeController extends Controller {
+class HomeController extends AppController {
     function index() {
+    	$this->loadModel('Song');
+    	//Song most views
+    	$songs_view = $this->Song->find('all', array('order' => 'num_of_view DESC', 'limit' => 10));
+    	$this->set('songs_view', $songs_view);
+    	//Song new
+    	$songs_new = $this->Song->find('all', array('order' => 'date_created DESC', 'limit' => 10));
+		$this->set('songs_new', $songs_new);
+
     }
 }
